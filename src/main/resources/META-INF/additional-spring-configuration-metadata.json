@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "registration.success.message",
+    "type": "java.lang.String",
+    "description": "A description for 'registration.success.message'"
+  },
+  {
+    "name": "registration.success.message",
+    "type": "java.lang.String",
+    "description": "A description for 'registration.success.message'"
+  }
+]}
