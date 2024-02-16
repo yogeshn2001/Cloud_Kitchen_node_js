@@ -1,4 +1,4 @@
-<!-- customer_welcome.html -->
+<!-- customer_welcome.html
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -11,6 +11,309 @@
     <div class="container mt-5">
         <h1>Welcome, Customer!</h1>
         <!-- Add your content here -->
-    </div>
+    <!-- </div>
 </body>
+</html> --> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rubik:wght@900&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/queries.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Cloud Kitchen</title>
+    <style>
+                * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        html {
+        font-family: "rubik", sans-serif;
+        line-height: 1;
+        font-weight: 400;
+        color: #555;
+        min-height: 100vh;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* height: 100vh; */
+        background-color: #fdf2e9;
+        scroll-behavior: smooth;
+        }
+
+        body {
+        font-family: "rubik", sans-serif;
+        line-height: 1;
+        font-weight: 400;
+        color: #555;
+
+        /* only works if there is nothing absolutely positioned in relation to body */
+        overflow-x: hidden;
+        }
+        /*.user-dashboard {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+            url(/images/welcome-page-img.avif) center/cover no-repeat;
+        min-height: 100vh;
+        margin-top:10%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-content: center;
+        position: relative;
+        }*/
+
+        .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        height: 60px;
+        padding: 0 20px;
+        }
+
+        .sticky .container {
+        margin-top: 9.6rem;
+        }
+
+        .logo {
+        height: 16rem;
+        }
+        .sticky .header {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 8rem;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.973);
+        z-index: 999;
+        box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.04);
+        }
+
+        .nav-list {
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 15px;
+        list-style: none;
+        /* z-index: 10; */
+        /* -webkit-box-shadow: 0 8px 6px -6px black;
+            -moz-box-shadow: 0 8px 6px -6px black;
+                box-shadow: 0 6px 6px -6px black; */
+        }
+
+        .nav-list a {
+        text-decoration: none;
+        color: #2c2c2a;
+        /* display: inline-block; */
+        font-family: "ubuntu", sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        padding: 14px 45px;
+        font-size: 15px;
+        }
+
+        .nav-list-link:link,
+        .nav-list-link:visited {
+        color: #595854;
+        font-weight: 400;
+        font-size: 20px;
+        transition: all 0.3s;
+        }
+
+        .nav-list-link:hover,
+        .nav-list-link:active {
+        color: #282826;
+        }
+        .nav-list-link .nav-list-link.link2 {
+        padding-right: 10px;
+        }
+
+        /* MOBILE */
+        .btn-mobile-nav {
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: none;
+        }
+        .icon-mobile-nav {
+        height: 4.8rem;
+        width: 4.8rem;
+        color: #333;
+        }
+        .icon-mobile-nav[name="close-outline"] {
+        display: none;
+        }
+
+        .container {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+            url(/images/welcome-page-img.avif) center/cover no-repeat;
+        height: 100vh;
+        background-size: cover;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 50px 15px;
+        /* position: relative; */
+
+        /* min-height: 100vh; 
+            padding-bottom: 50px;  */
+        }
+
+        .home-container {
+        position: relative;
+        }
+
+        .welcome-page-heading {
+        font-family: "Poppins", sans-serif;
+        font-size: 65px;
+        font-weight: bold;
+        text-align: left;
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        width: 100%;
+        margin: 0px;
+        /* padding: 0 20px; */
+        text-align: left;
+        line-height: 1.02;
+        color: #dedbd2;
+        letter-spacing: -1.3px;
+        }
+
+        .caterer-button {
+        position: absolute;
+        bottom: 160px; /* Adjust the space from the bottom */
+        left: 100px;
+        /* transform: translateX(-50%);  */
+        padding: 20px 30px;
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+        border: none;
+
+        background-color: rgb(164, 132, 72);
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 18px;
+        }
+        /* HOME CONTAINER*/
+
+        .home-container {
+        color: #fff;
+        max-width: 1170px;
+        width: 100%;
+        /* background-color: red; */
+        margin: auto;
+        }
+        /* .container::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        } */
+        .welcome-section-list {
+        border-radius: 5px;
+        max-height: 200px;
+        }
+        .welcome-section-list select {
+        color: #282826;
+        margin: 200px auto;
+        padding: 10px 70px;
+        font-size: 15px;
+        font-family: "poppins", sans-serif;
+        /* color: inherit; */
+        border: none;
+        background-color: #d9d9d9;
+        border-radius: 9px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        position: relative;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="user-dashboard">
+      <header class="header">
+        <a href="#">
+          <img class="logo" src="../static/logo.png" alt="CK logo "
+        /></a>
+        <nav class="nav-div">
+          <ul class="nav-list">
+            <li>
+              <a class="nav-list-link link1" href="custom.html"
+                >Make order</a
+              >
+            </li>
+            <li>
+              <a class="nav-list-link link2" href="trackorder.html"
+                >Track Order</a
+              >
+            </li>
+            <!-- <li>
+              <a class="nav-list-link link3" href="/html/payment.html"
+                >Payment</a
+              >
+            </li> -->
+            <li>
+              <a class="nav-list-link link3" href="about.html">Profile</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="btn-mobile-nav">
+          <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+          <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+        </button>
+      </header>
+    </div>
+
+    <section class="container">
+      <div class="home-container">
+        <div class="row">
+          <div class="welcome-section">
+            <h1 class="welcome-page-heading">Welcome to <br />Cloud Kitchen</h1>
+            <div class="welcome-section-list">
+              <select id="" name="" required>
+                <option value="">List of caterer</option>
+                <option value="Caterer 1">Caterer 1</option>
+                <option value="Caterer 2">Caterer 2</option>
+                <option value="Caterer 3">Caterer 3</option>
+                <option value="Caterer 4">Caterer 4</option>
+                <option value="Caterer 5">Caterer 5</option>
+                <option value="Caterer 6">Caterer 2</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="/js/queries.js"></script>
+  </body>
 </html>
+
