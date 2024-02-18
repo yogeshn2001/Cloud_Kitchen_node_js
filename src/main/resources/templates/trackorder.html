@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Order</title>
+    <link rel="stylesheet" href="/styles/queries.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rubik:wght@900&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Add your CSS styles here */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "poppins", sans-serif;
+        background-color: #fdf2e9;
+      }
+
+      .track-order-list {
+        font-family: "ubuntu", sans-serif;
+        margin: 30px auto;
+        width: 50%; /* Adjust the width as needed */
+        border: none; /* Border style */
+        border-radius: 1px;
+        padding: 10px; /* Padding around the list */
+        text-align: center;
+        color: #1b2021;
+        background-color: #c4beac;
+        font-size: 20px; /* Increased font size */
+      }
+
+      .track-order-list-heading {
+        padding-bottom: 21px;
+      }
+
+      .track-order-heading {
+        padding-bottom: 20px;
+      }
+
+      .track-order-header-top {
+        text-align: center;
+
+        margin: 50px;
+      }
+
+      .track-order-header {
+        color: #000;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 35px;
+      }
+
+      .track-order-date {
+        font-family: "ubuntu", sans-serif;
+        margin: 30px auto;
+        width: 50%; /* Adjust the width as needed */
+        border: none; /* Border style */
+        padding: 10px; /* Padding around the list */
+        text-align: center;
+        color: #1b2021;
+        background-color: #c4beac;
+        font-size: 20px; /* Increased font size */
+      }
+
+      .price-of-order {
+        font-family: "ubuntu", sans-serif;
+        margin: 30px auto;
+        color: black;
+        width: 50%; /* Adjust the width as needed */
+        border: none; /* Border style */
+        padding: 10px; /* Padding around the list */
+        text-align: center;
+        background-color: #c4beac;
+      }
+
+      .price-of-order-tag {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      /* Button styling */
+      .track-order-make-payment {
+        padding: 10px 20px; /* Padding */
+        margin-top: 35px;
+        margin-bottom: 20px;
+        text-decoration: none;
+        font-size: 16px; /* Font size */
+        font-family: "poppins", sans-serif;
+        font-weight: 500;
+        cursor: pointer; /* Cursor on hover */
+        border-radius: 7px; /* Rounded corners */
+        background-color: #c4beac;
+        transition: 0.3s;
+        display: block; /* Make it a block-level element */
+        margin: 0 auto; /* Center align horizontally */
+      }
+
+      .track-order-make-payment a {
+        text-decoration: none !important;
+        color: #fff !important;
+      }
+
+      .track-order-make-payment:hover {
+        background-color: #3e3e3b;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="track-order-header-top">
+      <h1 class="track-order-header">Track Order</h1>
+    </header>
+
+    <main>
+      <div id="dishList" class="track-order-list">
+        <h2 class="track-order-list-heading">Order List</h2>
+        <!-- List of dishes will be displayed here -->
+      </div>
+
+      <div class="track-order-date">
+        <h2 class="track-order-heading">Ordered date:</h2>
+        <p><span id="deliveryDatePlaceholder"></span></p>
+      </div>
+
+      <div class="price-of-order">
+        <h2 class="price-of-order-tag">Your Price is :</h2>
+      </div>
+
+      <button class="track-order-make-payment">
+        <a href="payment">Make Payment</a>
+      </button>
+    </main>
+
+    <script>
+      window.onload = function () {
+        // Get URL parameters
+        var urlParams = new URLSearchParams(window.location.search);
+        var selectedDishes = urlParams.get("selectedDishes");
+        var deliveryDate = urlParams.get("deliveryDate");
+
+        // Check if selectedDishes parameter exists
+        if (selectedDishes) {
+          // Split the selectedDishes string into an array of dishes
+          var dishesArray = selectedDishes.split(",");
+
+          // Get the dishList container
+          var dishListContainer = document.getElementById("dishList");
+
+          // Create a list element for each dish and append it to the dishListContainer
+          dishesArray.forEach(function (dish) {
+            var dishListItem = document.createElement("p");
+            dishListItem.textContent = "• " + dish; // Adding bullet point
+            dishListItem.style.marginBottom = "10px"; // Adding space between dishes
+            dishListContainer.appendChild(dishListItem);
+          });
+        }
+
+        // Check if deliveryDate parameter exists
+        if (deliveryDate) {
+          // Display the delivery date
+          document.getElementById("deliveryDatePlaceholder").textContent =
+            deliveryDate;
+        }
+      };
+    </script>
+  </body>
+</html>

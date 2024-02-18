@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <!-- <link rel="stylesheet" href="/styles/about.css" /> -->
+    <link rel="stylesheet" href="/styles/queries.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rubik:wght@900&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #fdf2e9;
+        scroll-behavior: smooth;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .profile-container {
+        max-width: 600px;
+        /* margin: 40px; */
+        background-color: #d0f4de;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* display:flex; */
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh;  */
+        margin: 200px auto;
+      }
+
+      .profile-header {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+
+      .profile-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-left: 40px;
+      }
+      /*   
+.profile-picture img {
+  border-radius: 50%;
+}
+ */
+      .profile-info h2 {
+        padding-bottom: 10px;
+      }
+
+      .profile-info p {
+        font-size: 18px;
+        padding-bottom: 10px;
+      }
+
+      .profile-footer {
+        text-align: center;
+      }
+
+      button#edit-profile {
+        padding: 10px 15px;
+        background-color: #3d4955;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button#edit-profile:hover {
+        background-color: #25323f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-container">
+      <header class="profile-header">
+        <h1>Profile</h1>
+      </header>
+      <div class="profile-content">
+        <!-- <div class="profile-picture">
+          <img
+            src="https://placehold.co/100x100"
+            alt="Profile Picture Placeholder"
+          />
+        </div> -->
+        <div class="profile-info">
+          <p>UserName :</p>
+          <p>PhoneNumber :</p>
+          <p>Email : johndoe@example.com</p>
+          <p>Address : ABC</p>
+          <p></p>
+        </div>
+      </div>
+      <footer class="profile-footer">
+        <button id="edit-profile">Edit Profile</button>
+      </footer>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

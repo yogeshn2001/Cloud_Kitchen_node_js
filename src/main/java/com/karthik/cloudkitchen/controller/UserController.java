@@ -145,7 +145,35 @@ public class UserController {
         model.addAttribute("user", new User());
         return "signup";
     }
+    @GetMapping("/makeorder")
+    public String showMakeOrder(Model model) {
+        model.addAttribute("user", new User());
+        return "makeorder";
+    }
 
+    @GetMapping("/trackorder")
+    public String showTrackOrder(Model model) {
+        model.addAttribute("user", new User());
+        return "trackorder";
+    }
+
+    @GetMapping("/profile")
+    public String showProfile(Model model) {
+        model.addAttribute("user", new User());
+        return "profile";
+    }
+
+    @GetMapping("/payment")
+    public String showPayment(Model model) {
+        model.addAttribute("user", new User());
+        return "payment";
+    }
+
+    @GetMapping("/about")
+    public String showAbout(Model model) {
+        model.addAttribute("user", new User());
+        return "about";
+    }
     @PostMapping("/signup")
     public String signup(@ModelAttribute User user, Model model) {
         userService.saveUser(user);
