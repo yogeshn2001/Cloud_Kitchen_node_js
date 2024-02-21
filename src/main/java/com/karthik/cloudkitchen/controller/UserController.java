@@ -195,6 +195,11 @@ public class UserController {
         return "admin_welcome";
     }
 
+    @GetMapping("customer_welcome")
+    public String customer_welcome() {
+        return "customer_welcome";
+    }
+
     private String determineRedirect(User user) {
         if ("CUSTOMER".equals(user.getRole())) {
             return "customer_welcome";
