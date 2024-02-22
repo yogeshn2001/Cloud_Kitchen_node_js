@@ -127,14 +127,15 @@ public class UserController {
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, HttpServletRequest request) {
         if ("admin".equals(username) && "admin123".equals(password)) {
-            return "redirect:/admin/welcome";
+            // return "redirect:/admin/welcome";
+            return "caterer_welcome()";
         }
 
         User user = userService.authenticateUser(username, password);
         if (user != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            return determineRedirect(user);
+            return "customer_welcome";
         } else {
             return "redirect:/login?error";
         }
@@ -185,14 +186,19 @@ public class UserController {
     public String welcome(HttpSession session, Model model) {
         User user = (User) session.getAttribute("user");
         if (user != null) {
-            return determineRedirect(user);
+           return "customer_welcome";
         }
         return "redirect:/login";
     }
 
-    @GetMapping("/admin/welcome")
-    public String adminWelcome() {
-        return "admin_welcome";
+    // @GetMapping("/admin/welcome")
+    // public String adminWelcome() {
+    //     return "admin_welcome";
+    // }
+
+    @GetMapping("caterer_welcome")
+    public String caterer_welcome() {
+        return "caterer_welcome";
     }
 
     @GetMapping("customer_welcome")
@@ -200,12 +206,5 @@ public class UserController {
         return "customer_welcome";
     }
 
-    private String determineRedirect(User user) {
-        if ("CUSTOMER".equals(user.getRole())) {
-            return "customer_welcome";
-        } else if ("CATERER".equals(user.getRole())) {
-            return "caterer_welcome";
-        }
-        return "redirect:/login";
-    }
+   
 }
