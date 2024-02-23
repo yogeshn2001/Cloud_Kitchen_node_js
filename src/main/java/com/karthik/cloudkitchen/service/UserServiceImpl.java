@@ -44,4 +44,13 @@ public class UserServiceImpl implements UserService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'isUserExists'");
     }
+
+    // @Override
+    // public User findByUsername(String username) {
+    //     return userRepository.findByUsername(username);
+    // }
+    public User findById(Long userId) {
+        // Assuming userService has access to a UserRepository or some other mechanism to retrieve users from the database
+        return userRepository.findById(userId).orElse(null);
+    }
 }

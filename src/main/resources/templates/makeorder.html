@@ -118,7 +118,7 @@ html {
 <ion-icon class="btn" name="add-outline"></ion-icon>
 </button>
 </div>
-<input type="text" id="quantity" placeholder="Caterer name" required />
+<!-- <input type="text" id="quantity" placeholder="Caterer name" required /> -->
 <br />
 <label class="custom-delivery-date deliveryDate" for="deliveryDateInput">Choose a delivery date:</label><br />
 <input class="custom-input-date deliveryDateInput" type="date" id="deliveryDateInput" required min="<?php echo date('Y-m-d'); ?>" />
@@ -131,7 +131,12 @@ html {
 <div class="list-section" id="dishList">
 <h2 class="list-section-header">Selected Dishes</h2>
 </div>
-<button id="submit-order" class="custom-page-submit" onclick="validateOrder()">Request Order</button>
+
+
+<a href="trackorder"><button id="submit-order" class="custom-page-submit">Request Order</button>
+</a>
+
+
 </div>
 </main>
 <script>
@@ -151,66 +156,66 @@ listSection.appendChild(dishItem);
 // Clear input fields after adding
 document.getElementById("dishName").value = "";
 // Enable the request order button
-toggleRequestOrderButton();
+// toggleRequestOrderButton();
 }
 // Function to delete a dish item
 function deleteDish(buttonElement) {
 const dishItem = buttonElement.parentElement;
 dishItem.remove();
 // Check if there are any dish items left after deletion
-toggleRequestOrderButton();
+//toggleRequestOrderButton();
 }
 // Function to enable or disable the request order button
-function toggleRequestOrderButton() {
-const submitButton = document.getElementById("submit-order");
-const peopleInput = document.getElementById("no-of-people").value;
-const dateInput = document.getElementById("deliveryDateInput").value;
-const dishItemsExist = document.querySelectorAll(".dish-item").length > 0;
-if (dateInput && peopleInput && dishItemsExist) {
-submitButton.disabled = false; // Enable the button if date is entered and there are selected dishes
-} else {
-submitButton.disabled = true; // Disable the button if date is empty or there are no selected dishes
-}
-}
+// function toggleRequestOrderButton() {
+// const submitButton = document.getElementById("submit-order");
+// const peopleInput = document.getElementById("no-of-people").value;
+// const dateInput = document.getElementById("deliveryDateInput").value;
+// const dishItemsExist = document.querySelectorAll(".dish-item").length > 0;
+// if (dateInput && peopleInput && dishItemsExist) {
+// submitButton.disabled = false; // Enable the button if date is entered and there are selected dishes
+// } else {
+// submitButton.disabled = true; // Disable the button if date is empty or there are no selected dishes
+// }
+// }
 // Function to validate the order before submission
-function validateOrder() {
-const deliveryDate = document.getElementById("deliveryDateInput").value;
-const today = new Date();
-const selectedDate = new Date(deliveryDate);
-const errorMessage = document.getElementById("dateErrorMessage");
-if (selectedDate < today) {
-errorMessage.textContent = "Please select a valid future date.";
-return false;
-}
-// Clear the error message if the date is valid
-errorMessage.textContent = "";
-// Proceed with the order submission
-submitOrder();
-}
-// Func   tion to submit the order
-function submitOrder() {
-var selectedDishes = getSelectedDishes();
-var deliveryDate = document.getElementById("deliveryDateInput").value;
-if (selectedDishes && deliveryDate) {
-window.location.href = "trackorder?selectedDishes=" + encodeURIComponent(selectedDishes) + "&deliveryDate=" + encodeURIComponent(deliveryDate);
-} else {
-alert("Please add dishes and select a delivery date before submitting the order.");
-}
-}
-// Function to get the list of selected dishes
-function getSelectedDishes() {
-var selectedDishes = [];
-var dishItems = document.querySelectorAll(".dish-item span");
-dishItems.forEach(function (dishItem) {
-selectedDishes.push(dishItem.textContent);
-});
-return selectedDishes.join(",");
-}
-// Event listener for the "change" event of the date input
-document.getElementById("deliveryDateInput").addEventListener("change", function () {
-// Enable or disable the request order button when the date is changed
-toggleRequestOrderButton();
-});
+// function validateOrder() {
+// const deliveryDate = document.getElementById("deliveryDateInput").value;
+// const today = new Date();
+// const selectedDate = new Date(deliveryDate);
+// const errorMessage = document.getElementById("dateErrorMessage");
+// if (selectedDate < today) {
+// errorMessage.textContent = "Please select a valid future date.";
+// return false;
+// }
+// // Clear the error message if the date is valid
+// errorMessage.textContent = "";
+// // Proceed with the order submission
+// submitOrder();
+// }
+// // Func   tion to submit the order
+// function submitOrder() {
+// var selectedDishes = getSelectedDishes();
+// var deliveryDate = document.getElementById("deliveryDateInput").value;
+// if (selectedDishes && deliveryDate) {
+// window.location.href = "trackorder?selectedDishes=" + encodeURIComponent(selectedDishes) + "&deliveryDate=" + encodeURIComponent(deliveryDate);
+// } else {
+// alert("Please add dishes and select a delivery date before submitting the order.");
+// }
+// }
+// // Function to get the list of selected dishes
+// function getSelectedDishes() {
+// var selectedDishes = [];
+// var dishItems = document.querySelectorAll(".dish-item span");
+// dishItems.forEach(function (dishItem) {
+// selectedDishes.push(dishItem.textContent);
+// });
+// return selectedDishes.join(",");
+// }
+// // Event listener for the "change" event of the date input
+// document.getElementById("deliveryDateInput").addEventListener("change", function () {
+// // Enable or disable the request order button when the date is changed
+// toggleRequestOrderButton();
+// });
 </script>
 </body>
 </html>

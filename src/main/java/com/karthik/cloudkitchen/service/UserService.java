@@ -9,4 +9,6 @@ public interface UserService {
     String getRegistrationSuccessMessage();
     void saveUser(org.apache.catalina.User user);
     boolean isUserExists(String username);
+    User findById(Long userId);
+    //User findByUsername(String username);
 }
