@@ -24,20 +24,20 @@ public class OrderController {
 
    @Autowired
 private UserService userService;
-private User user;
+// private User user;
 
 @PostMapping("/saveOrder")
 @ResponseBody
 public void saveOrder(HttpServletRequest request, Principal principal) {
-    String dishNames = request.getParameter("dishName"); // Retrieve dish names as String array
-   // List<String> dishNameList = Arrays.asList(dishNames); // Convert String array to List<String>
-
+    String dishNames = request.getParameter("dishName");
     LocalDate deliveryDate = LocalDate.parse(request.getParameter("deliveryDate"));
     int numberOfPeople = Integer.parseInt(request.getParameter("numberOfPeople"));
 
-    // Get the authenticated user object
-    Long userId = user.getId(); // Get the username from Principal
-    User user = userService.findById(userId); // Assuming you have a method to find User by username
+    // Get the authenticated user's ID
+    Long userId = Long.parseLong(principal.getName());
+
+    // Find the user by their ID
+    User user = userService.findById(userId);
 
     // Create Order object
     Order order = new Order(dishNames, deliveryDate, numberOfPeople, user);
@@ -45,6 +45,8 @@ public void saveOrder(HttpServletRequest request, Principal principal) {
     // Save the order
     orderService.saveOrder(order);
 }
+
+
 
     
 }
