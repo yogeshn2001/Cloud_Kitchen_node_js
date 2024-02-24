@@ -15,9 +15,18 @@
     <title>Explore caterer</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/src/main/resources/static/css/customer-service-general.css" />
-    <link rel="stylesheet" href="/src/main/resources/static/css/customer-service-style.css" />
-    <link rel="stylesheet" href="/src/main/resources/static/css/customer-service-queries.css" />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/customer-service-general.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/customer-service-style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/src/main/resources/static/css/customer-service-queries.css"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,30 +49,28 @@
   <body>
     <header class="header">
       <a href="#">
-        <img class="logo" src="/src/main/resources/static/images/logo.png" alt="delicious logo "
+        <img
+          class="logo"
+          src="/src/main/resources/static/images/logo.png"
+          alt="delicious logo "
       /></a>
-      
-      
     </header>
 
     <main>
       <section class="section-hero">
         <div class="hero">
           <div class="hero-text-box">
-            <h1 class="heading-primary">
-              Crafting Culinary Delights
-            </h1>
+            <h1 class="heading-primary">Crafting Culinary Delights</h1>
             <p class="hero-description">
-              From exquisite flavors to impeccable service, we elevate your occasions with the perfect blend of taste and elegance.
+              From exquisite flavors to impeccable service, we elevate your
+              occasions with the perfect blend of taste and elegance.
             </p>
             <a href="makeorder.html" class="btn btn--left margin-right-sm"
               >Make Order</a
             >
-            
 
             <div class="delivered-meals">
               <div class="delivered-imgs">
-                
                 <p class="delivered-text">
                   <span>250,000+</span> meals delivered last year!
                 </p>
@@ -72,8 +79,8 @@
           </div>
           <div class="hero-img-box">
             <picture>
-              <source srcset="img/hero.webp" type="image/webp" />
-              <source srcset="img/hero-min.png" type="image/png" />
+              <!-- <source srcset="img/hero.webp" type="image/webp" />
+              <source srcset="img/hero-min.png" type="image/png" /> -->
 
               <!-- <img
                 src="img/hero-min.png"
@@ -81,7 +88,7 @@
                 alt="Woman enjoying food, meals in storage container, food bowls on a table "
                 /> -->
               <img
-                src="img/hero-min.png"
+                src="/src/main/resources/static/images/hero.png"
                 class="hero-img"
                 alt="Woman enjoying food, meals in storage container, food bowls on a table "
               />
@@ -100,23 +107,23 @@
         <div class="container grid grid--3-cols margin-bottom-md">
           <div class="meal">
             <img
-              src="img/meals/meal-1.jpg"
+              src="/src/main/resources/static/images/meal-1.jpg"
               class="meal-img"
-              alt="Japanese Gyoras"/>
-            <div class="meal-content">         
+              alt="Japanese Gyoras"
+            />
+            <div class="meal-content">
               <p class="meal-title">South Indian</p>
             </div>
           </div>
 
           <div class="meal">
             <img
-              src="img/meals/meal-2.jpg"
+              src="/src/main/resources/static/images/meal-2.jpg"
               class="meal-img"
               alt="Japanese Gyoras"
             />
             <div class="meal-content">
               <p class="meal-title">North Indian</p>
-              
             </div>
           </div>
 
@@ -162,9 +169,41 @@
             </ul>
           </div>
         </div>
-        
       </section>
-
+      <section class="container grid grid--4-cols">
+        <div class="feature">
+          <ion-icon class="feature-icon" name="infinite-outline"></ion-icon>
+          <p class="feature-title">Healthy & Tasty!</p>
+          <p class="feature-text">
+            Our subscriptions cover 365 days per year, even including major
+            holidays.
+          </p>
+        </div>
+        <div class="feature">
+          <ion-icon class="feature-icon" name="nutrition-outline"></ion-icon>
+          <p class="feature-title">Quality and Hygiene</p>
+          <p class="feature-text">
+            Our cooks only use local, fresh, and organic products to prepare
+            your meals.
+          </p>
+        </div>
+        <div class="feature">
+          <ion-icon class="feature-icon" name="leaf-outline"></ion-icon>
+          <p class="feature-title">Local and organic</p>
+          <p class="feature-text">
+            All our partners only use reusable containers to package all your
+            meals.
+          </p>
+        </div>
+        <div class="feature">
+          <ion-icon class="feature-icon" name="pause-outline"></ion-icon>
+          <p class="feature-title">Eco-Freindly</p>
+          <p class="feature-text">
+            All our partners only use reusable containers to package all your
+            meals.
+          </p>
+        </div>
+      </section>
       <section class="section-testimonials" id="testimonials">
         <div class="testimonials-container">
           <span class="sub-heading">Testimonial</span>
@@ -178,7 +217,8 @@
                 alt="dave customer"
               />
               <blockquote class="testimonial-text">
-                Inexpensive, healthy and great-tasting meals, had a great experience and service.
+                Inexpensive, healthy and great-tasting meals, had a great
+                experience and service.
               </blockquote>
               <p class="testimonial-name">&mdash; Dave Bryson</p>
             </figure>
@@ -200,7 +240,9 @@
                 alt="dave customer"
               />
               <blockquote class="testimonial-text">
-                From the delectable dishes to the impeccable presentation, every detail was meticulously executed, making our event truly unforgettable. 
+                From the delectable dishes to the impeccable presentation, every
+                detail was meticulously executed, making our event truly
+                unforgettable.
               </blockquote>
               <p class="testimonial-name">&mdash; Steve Miller</p>
             </figure>
@@ -211,7 +253,8 @@
                 alt="dave customer"
               />
               <blockquote class="testimonial-text">
-                Exceptional catering, delightful flavors, impeccable service. Couldn't ask for more. Highly recommend for any event!
+                Exceptional catering, delightful flavors, impeccable service.
+                Couldn't ask for more. Highly recommend for any event!
               </blockquote>
               <p class="testimonial-name">&mdash; Hannah Smith</p>
             </figure>
@@ -220,53 +263,89 @@
 
         <div class="gallery">
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-1.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-1.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-2.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-2.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-3.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-3.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-4.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-4.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-5.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-5.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-6.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-6.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-7.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-7.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-8.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-8.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-9.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-9.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-10.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-10.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-11.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-11.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="img/gallery/gallery-12.jpg" alt="Photo from gallery" />
+            <img
+              src="/src/main/resources/static/images/gallery-12.jpg"
+              alt="Photo from gallery"
+            />
           </figure>
         </div>
       </section>
-
-
-     
     </main>
 
     <footer class="footer">
       <div class="container grid grid--footer">
         <div class="logo-col">
           <a href="#" class="footer-logo">
-            <img class="logo" src="/src/main/resources/static/images/logo.png" alt="delicious logo "
+            <img
+              class="logo-1"
+              src="/src/main/resources/static/images/logo.png"
+              alt="delicious logo "
           /></a>
           <ul class="social-links">
             <li>
@@ -287,9 +366,8 @@
           </ul>
 
           <p class="copyright">
-            Copyright &copy; <span class="year">2027</span> Delicious Bangalore,
-            Inc. <br />All rights are reserved.<br />
-            
+            Copyright &copy; <span class="year">2024</span> Cloud Kitchen, Inc.
+            <br />All rights are reserved.<br />
           </p>
         </div>
         <div class="address-col">
@@ -300,8 +378,8 @@
               <a class="footer-link" href="tel:999-999-9999">999-999-9999</a
               ><br />
               <a class="footer-link" href="mailto:hello@deliciousblr.com"
-                >hello@deliciousblr.com</a
-              >
+                >hello@cloudkitchen.com</a
+              ><br />
             </p>
           </address>
         </div>
@@ -310,17 +388,17 @@
           <ul class="footer-nav">
             <li><a class="footer-link" href="#">Create account</a></li>
             <li><a class="footer-link" href="#">Sign in</a></li>
-            <li><a class="footer-link" href="#">iOS app</a></li>
-            <li><a class="footer-link" href="#">Android app</a></li>
+            <!-- <li><a class="footer-link" href="#">iOS app</a></li>
+            <li><a class="footer-link" href="#">Android app</a></li> -->
           </ul>
         </div>
         <div class="nav-col">
           <p class="footer-heading">Company</p>
           <ul class="footer-nav">
-            <li><a class="footer-link" href="#">About Omnifood</a></li>
+            <li><a class="footer-link" href="#">About Cloud Kitchen</a></li>
             <li><a class="footer-link" href="#">For Business</a></li>
             <li><a class="footer-link" href="#">Cooking partners</a></li>
-            <li><a class="footer-link" href="#">Careers</a></li>
+            <!-- <li><a class="footer-link" href="#">Careers</a></li> -->
           </ul>
         </div>
         <div class="nav-col">
@@ -333,6 +411,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/deliciousblr.js"></script>
+    <!-- <script src="js/deliciousblr.js"></script> -->
   </body>
 </html>
