@@ -1,9 +1,6 @@
 package com.karthik.cloudkitchen.controller;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +11,7 @@ import com.karthik.cloudkitchen.service.OrderService;
 import com.karthik.cloudkitchen.service.UserService;
 
 import jakarta.servlet.http.HttpServletRequest;
+
 import java.security.Principal;
 
 
@@ -23,13 +21,14 @@ public class OrderController {
     private OrderService orderService;
 
    @Autowired
-private UserService userService;
+    private UserService userService;
 // private User user;
 
 @PostMapping("/saveOrder")
 @ResponseBody
 public void saveOrder(HttpServletRequest request, Principal principal) {
-    String dishNames = request.getParameter("dishName");
+    String dishNames = request.getParameter("dishNames");
+    // String[] dishNames = dishNameString.split(","); 
     LocalDate deliveryDate = LocalDate.parse(request.getParameter("deliveryDate"));
     int numberOfPeople = Integer.parseInt(request.getParameter("numberOfPeople"));
 

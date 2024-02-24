@@ -1,7 +1,6 @@
 package com.karthik.cloudkitchen.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 //import org.hibernate.mapping.List;
@@ -14,24 +13,23 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Order_id;
 
-    // @ElementCollection
-    private String dishName; // Changed type to List<String>
+    private List<String> dishName;
 
     //private String catererName;
     private LocalDate deliveryDate;
     private int numberOfPeople;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id")
     private User user;
 
-    public Order() {
+    public Order(String dishNames, LocalDate deliveryDate2, int numberOfPeople2, User user2) {
     this.dishName = null;
     this.deliveryDate = LocalDate.now(); // Set the default delivery date to the current date
     this.numberOfPeople = 0; // Set the default number of people to 0
 }
 
-    public Order(String dishName, 
+    public Order(List<String> dishName, 
     //String catererName, 
     LocalDate deliveryDate, int numberOfPeople, User user) {
         this.dishName = dishName;
@@ -52,11 +50,11 @@ public class Order {
         this. Order_id = Order_id;
     }
 
-    public String getDishName() {
+    public List<String> getDishName() {
         return dishName;
     }
 
-    public void setDishName(String dishName) {
+    public void setDishName(List<String> dishName) {
         this.dishName = dishName;
     }
 
@@ -91,4 +89,5 @@ public class Order {
     public void setUser(User user) {
         this.user = user;
     }
+
 }

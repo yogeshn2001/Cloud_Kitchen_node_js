@@ -124,6 +124,7 @@ public class UserController {
     public String showLoginForm2() {
         return "login";
     }
+    
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, HttpServletRequest request) {
         if ("admin".equals(username) && "admin123".equals(password)) {
